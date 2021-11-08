@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar_h p-3">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Comics Fanpage</a>
+      <a class="navbar-brand" href="{{route('comics.index')}}">Comics Fanpage</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
