@@ -28,6 +28,7 @@ class HomeController extends Controller
     public function create(Request $request, Comic $comic)
     {
         $comic = new Comic();
+
         return view('comics.create', compact("comic", "request"));
     }
 
@@ -39,7 +40,18 @@ class HomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $comic = new Comic();
+
+        $comic = Comic::create($data);
+
+        /* dd($comic); */
+
+        $comic->save();
+
+
+        return redirect()->route('comics.show', $comic);
     }
 
     /**

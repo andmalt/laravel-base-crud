@@ -12,24 +12,33 @@
                         @csrf
                         <div class="row">
                             <div class="col-12 col-md-10 col-lg-9 d-flex justify-content-between align-items-center ">
-                                <label for="title" class="form-label col-12 col-md-8 col-lg-3">Titolo fumetto</label>
+                                <label for="title" class="form-label col-12 col-md-8 col-lg-3"><strong>Titolo fumetto</strong></label>
                                 <input class="form-control " type="text" id="title" name="title" placeholder="Titolo" value="{{ $comic->title }}" required>
                                 <div class="form-text m-3 col-12 col-md-10 col-lg-4">Inserisci il titolo del nuovo fumetto</div>       
                             </div>
                             <div class="col-12 col-md-10 col-lg-9 d-flex justify-content-between align-items-center ">
-                                <label for="author" class="form-label col-12 col-md-8 col-lg-3">Autore fumetto</label>
+                                <label for="author" class="form-label col-12 col-md-8 col-lg-3"><strong>Autore fumetto</strong></label>
                                 <input class="form-control " type="text" id="author" name="author" placeholder="Autore" value="{{ $comic->author }}" required>
                                 <div class="form-text m-3 col-12 col-md-10 col-lg-4">Inserisci l'autore del nuovo fumetto</div>       
                             </div>
                             <div class="col-12 col-md-10 col-lg-9 d-flex justify-content-between align-items-center ">
-                                <label for="image" class="form-label col-12 col-md-8 col-lg-3">Immagine fumetto</label>
-                                <input class="form-control " type="text" id="image" name="image" placeholder="Immagine" value="{{ $comic->image_url }}" required>
+                                <label for="image_url" class="form-label col-12 col-md-8 col-lg-3"><strong>Immagine fumetto</strong></label>
+                                <input class="form-control " type="text" id="image_url" name="image_url" placeholder="Immagine" value="{{ $comic->image_url }}" required>
                                 <div class="form-text m-3 col-12 col-md-10 col-lg-4">Inserisci immagine link</div>       
                             </div>
                             <div class="col-12 col-md-10 col-lg-9 d-flex justify-content-between align-items-center ">
-                                <label for="image" class="form-label col-12 col-md-8 col-lg-3">Immagine fumetto</label>
-                                <input class="form-control " type="text" id="image" name="image" placeholder="Immagine" value="{{ $comic->image_url }}" required>
-                                <div class="form-text m-3 col-12 col-md-10 col-lg-4">Inserisci immagine link</div>       
+                                <label for="publication_date" class="form-label col-12 col-md-8 col-lg-3"><strong>Data del fumetto</strong></label>
+                                <input class="form-control " type="text" id="publication_date" name="publication_date" placeholder="Data" value="{{ $comic->publication_date }}" required>
+                                <div class="form-text m-3 col-12 col-md-10 col-lg-4">Inserisci la data di pubblicazione</div>       
+                            </div>
+                            <div class="col-12 col-md-10 col-lg-9 d-flex justify-content-between align-items-center ">
+                                <label for="description" class="form-label col-12 col-md-8 col-lg-3"><strong>Descrizione del fumetto</strong></label>
+                                <input  class="form-control " type="text" id="description" name="description" placeholder="Descrizione" value="{{ $comic->description }}" required>
+                                <div class="form-text m-3 col-12 col-md-10 col-lg-4">Inserisci la descrizione del fumetto</div>       
+                            </div>
+                            <div class="col-12 col-md-10 col-lg-9 d-flex justify-content-around align-items-center p-3">
+                                <button type="reset" class="btn btn-secondary ">Cancella i campi</button> 
+                                <button type="submit" class="btn btn-secondary ">Inserisci nuovo fumetto</button>     
                             </div>
                         </div>
                     </form>
