@@ -7,7 +7,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-link {{ request()->routeIs('comics.index') ? 'active' : '' }}" href="{{route('comics.index')}}">Comics</a>
-          <a class="nav-link" href="#">New comics</a>
+          <a class="nav-link {{ request()->routeIs('comics.create') ? 'active' : '' }}" href="{{route('comics.create')}}">New comics</a>
         </div>
       </div>
     </div>

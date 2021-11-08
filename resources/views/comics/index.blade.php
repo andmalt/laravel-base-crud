@@ -11,10 +11,10 @@
             <table class="table table-dark table-striped">
                 <thead>
                     <tr>
-                        <th scope="col-3">#</th>
-                        <th scope="col-3"> Titolo </th>
-                        <th scope="col-3">Autore</th>
-                        <th scope="col-3">Data di pubblicazione</th>
+                        <th scope="col">#</th>
+                        <th scope="col"> Titolo </th>
+                        <th scope="col">Autore</th>
+                        <th scope="col">Data di pubblicazione</th>
                     </tr>
                 </thead>
                 <tbody>

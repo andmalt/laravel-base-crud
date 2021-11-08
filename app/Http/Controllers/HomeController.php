@@ -25,9 +25,10 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request, Comic $comic)
     {
-        //
+        $comic = new Comic();
+        return view('comics.create', compact("comic", "request"));
     }
 
     /**
