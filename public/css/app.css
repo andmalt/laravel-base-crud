@@ -12177,3 +12177,12 @@ fieldset:disabled .btn {
   font-weight: 600;
 }
 
+.link_name {
+  text-decoration: none;
+  color: white;
+}
+
+.link_name:hover {
+  color: lightgrey;
+}
+

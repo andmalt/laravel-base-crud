@@ -7,7 +7,7 @@
 
 <div class="container p-5">
     <div class="row justify-content-center">
-        <div class="col-12 col-md-10 col-lg-8">
+        <div class="col-12 col-md-10 col-lg-9">
             <table class="table table-dark table-striped">
                 <thead>
                     <tr>
@@ -18,12 +18,14 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($comics as $comic)
                     <tr>
-                        <th scope="row">1</th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <th scope="row">{{$comic->id}}</th>
+                        <td><a href="{{ route('comics.show', $comic->id )}}" class="link_name">{{strtoupper($comic->title)}}</a></td>
+                        <td>{{$comic->author}}</td>
+                        <td>{{date("d-m-Y",strtotime($comic->publication_date))}}</td>
                     </tr> 
+                    @endforeach             
                 </tbody> 
             </table>
         </div>

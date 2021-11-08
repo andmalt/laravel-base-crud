@@ -16,8 +16,8 @@ class HomeController extends Controller
     {
         $comics = Comic::all();
         // dd($comics);
-        
-        return view('index', compact('comics'));
+
+        return view('comics.index', compact('comics'));
     }
 
     /**
@@ -49,7 +49,9 @@ class HomeController extends Controller
      */
     public function show($id)
     {
-        //
+        $comic = Comic::findOrFail($id);
+
+        return view('comics.show', compact('comic'));
     }
 
     /**

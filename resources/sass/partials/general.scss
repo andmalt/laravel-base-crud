@@ -2,3 +2,10 @@
 .navbar_h{
     font-weight: 600;
 }
+.link_name{
+    text-decoration: none;
+    color: white;
+    &:hover{
+        color: lightgrey;
+    }
+}
