@@ -7,7 +7,7 @@
 
 <div class="container p-5">
     <div class="row justify-content-center">
-        <div class="col-12 col-md-10 col-lg-9">
+        <div class="col-12 col-md-11 col-lg-10">
             <table class="table table-dark table-striped">
                 <thead>
                     <tr>

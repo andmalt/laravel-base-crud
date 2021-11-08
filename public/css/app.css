@@ -12186,3 +12186,10 @@ fieldset:disabled .btn {
   color: lightgrey;
 }
 
+.img_card {
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
