@@ -93,7 +93,7 @@ class HomeController extends Controller
 
         $comic->update($data);
 
-        return redirect()->view('comics.show' , $comic->id );
+        return redirect()->route('comics.show' , $comic->id );
     }
 
     /**

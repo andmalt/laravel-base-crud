@@ -4,7 +4,7 @@
         <div class="col-12 col-md-10 p-4">
             <div class="card border-dark mb-3">
                 <div class="card-header d-flex justify-content-between align-items-center">
-                    <h1>{{ $request->routeIs('comics.edit') ? "Modifica $comic->name" : "Inserisci un nuovo fumetto" }}</h1>
+                    <h1>{{ $request->routeIs('comics.edit') ? "Modifica $comic->title" : "Inserisci un nuovo fumetto" }}</h1>
                         <a class="btn btn-dark" href="{{ route('comics.index') }}">Torna alla lista dei fumetti</a>
                 </div>
                 <div class="card-body text-dark">
@@ -42,8 +42,10 @@
                                 <div class="form-text m-3 col-12 col-md-10 col-lg-4">Inserisci la descrizione del fumetto</div>       
                             </div>
                             <div class="col-12 col-md-10 col-lg-9 d-flex justify-content-around align-items-center p-3">
-                                <button type="reset" class="btn btn-secondary ">Cancella i campi</button> 
-                                <button type="submit" class="btn btn-secondary ">{{$request->routeIs('comics.edit') ? 'Modifica'. $comic->name  : 'Inserisci il fumetto' }}</button>     
+                                @if ( $request->routeIs('comics.create'))
+                                    <button type="reset" class="btn btn-secondary ">Cancella i campi</button>
+                                @endif
+                                <button type="submit" class="btn btn-secondary ">{{$request->routeIs('comics.edit') ? 'Modifica'.' '. $comic->title  : 'Inserisci il fumetto' }}</button>     
                             </div>
                         </div>
                     </form>
