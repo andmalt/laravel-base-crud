@@ -11261,3 +11261,12 @@ textarea.form-control-lg {
   -o-object-fit: cover;
      object-fit: cover;
 }
+
+#delete {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  color: red;
+}
+#delete:hover {
+  color: #b30000;
+}

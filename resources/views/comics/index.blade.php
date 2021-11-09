@@ -17,21 +17,30 @@
             <table class="table table-dark table-striped">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col"></th>
                         <th scope="col"> Titolo </th>
                         <th scope="col">Autore</th>
                         <th scope="col">Data di pubblicazione</th>
-                        <th></th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($comics as $comic)
                     <tr>
-                        <td scope="row">{{$comic->id}}</td>
+                        <td scope="row"></td>
                         <td><a href="{{ route('comics.show', $comic->id )}}" class="link_name">{{strtoupper($comic->title)}}</a></td>
                         <td>{{$comic->author}}</td>
                         <td>{{date("d-m-Y",strtotime($comic->publication_date))}}</td>
                         <td><a href="{{ route('comics.edit', $comic->id )}}"><i  class="fas fa-edit"></a></i></td>
+                        <td>
+                            <form action="{{ route('comics.destroy', $comic->id)}}" method="POST">
+                                @csrf
+
+                                @method('delete')
+                                <button type="submit" id="delete"><i class="fas fa-trash-alt"></i></button>
+                            </form>
+                        </td>
                     </tr> 
                     @endforeach             
                 </tbody> 
