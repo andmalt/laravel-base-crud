@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Comic;
 use Illuminate\Http\Request;
 
+use function GuzzleHttp\Promise\all;
+
 class HomeController extends Controller
 {
     /**
@@ -51,7 +53,7 @@ class HomeController extends Controller
         $comic->save();
 
 
-        return redirect()->route('comics.show', $comic);
+        return redirect()->route('comics.show', compact('comic'));
     }
 
     /**
@@ -73,9 +75,9 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, Comic $comic)
     {
-        //
+        return view('comics.edit', compact('comic' , 'request'));
     }
 
     /**
@@ -85,9 +87,13 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comic $comic)
     {
-        //
+        $data = $request->all();
+
+        $comic->update($data);
+
+        return redirect()->view('comics.show' , $comic->id );
     }
 
     /**

@@ -7,6 +7,7 @@
     <title>@yield('title')</title>
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    @yield('cdn-section')
 </head>
 <body>
     @include('partials.header')
