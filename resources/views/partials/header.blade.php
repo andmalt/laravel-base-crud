@@ -10,5 +10,11 @@
           <a class="nav-link {{ request()->routeIs('comics.create') ? 'active' : '' }}" href="{{route('comics.create')}}">New comics</a>
         </div>
       </div>
+      @if (request()->routeIs('comics.index'))
+        <form class="d-flex m-0 me-5" method="get">
+          <input class="form-control me-2" type="search" placeholder="Cerca" value="{{$search}}" name="search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Cerca</button>
+        </form>
+      @endif  
     </div>
   </nav>

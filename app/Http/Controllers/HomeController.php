@@ -14,12 +14,23 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $comics = Comic::all();
+        // dd($request);
+
+        $search = $request->query('search');
+
+        // dd($search);
+
+        if($search != null){
+            $comics = Comic::where('title', 'LIKE', "$search%")->get();
+        }else{
+            $comics = Comic::all();
+        }
+        
         // dd($comics);
 
-        return view('comics.index', compact('comics'));
+        return view('comics.index', compact('comics','search'));
     }
 
     /**
@@ -29,8 +40,6 @@ class HomeController extends Controller
      */
     public function create(Request $request, Comic $comic)
     {
-        $comic = new Comic();
-
         return view('comics.create', compact("comic", "request"));
     }
 
